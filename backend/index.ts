@@ -27,7 +27,7 @@ app.get("/test-db", async (req: Request, res: Response) => {
   res.json(result.rows[0]);
 });
 
-const PORT = 4000;
+const PORT = process.env.PORT|| 4000;
 app.listen(PORT, () => {
   console.log(`server running on ${PORT}`);
 });
