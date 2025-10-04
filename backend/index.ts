@@ -8,13 +8,14 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://focus-f-low-omega.vercel.app/"],
+    origin: ["http://localhost:3000", "https://focus-f-low-omega.vercel.app"],
     credentials: true,
   })
 );
+app.use(express.json());
+
 app.use("/api/habits", habitsRouter);
 app.use("/api/user", userRouter);
 
