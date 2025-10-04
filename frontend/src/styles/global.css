@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base */
+:root {
+  --bg: #0f172a; /* dark text base fallback */
+  --muted: #64748b;
+  --card: #ffffff;
+  --accent: linear-gradient(90deg, #0ea5e9 0%, #6366f1 100%);
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* small card utility to ensure consistent look */
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+
+/* button styles */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg font-medium transition;
+}
+.btn-primary {
+  @apply bg-gradient-to-r from-sky-500 to-indigo-600 text-white px-4 py-2 shadow;
+}
+.btn-ghost {
+  @apply bg-transparent border px-3 py-1 rounded text-slate-700 hover:bg-slate-50;
+}
+
+/* subtle input */
+.input {
+  @apply w-full p-2 rounded-lg border border-slate-200 bg-white placeholder-slate-400;
+}
+
+/* responsive container */
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+.icons {
+  height: 2rem;
+  width: 2rem;
+}
+.iconContainer {
+  width: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  scale: 1.1;
+}
