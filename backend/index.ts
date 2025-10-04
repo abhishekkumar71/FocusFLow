@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
-import { pool } from "./utils/db";
-import habitsRouter from "./routes/habits";
-import userRouter from "./routes/auth";
+import { pool } from "./src/utils/db";
+import habitsRouter from "./src/routes/habits";
+import userRouter from "./src/routes/auth";
 import cors from "cors";
 
 
