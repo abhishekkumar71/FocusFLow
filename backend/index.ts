@@ -5,16 +5,16 @@ import habitsRouter from "./src/routes/habits";
 import userRouter from "./src/routes/auth";
 import cors from "cors";
 
-
-
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://focus-f-low-omega.vercel.app/"],
+    credentials: true,
+  })
+);
 app.use("/api/habits", habitsRouter);
 app.use("/api/user", userRouter);
 
